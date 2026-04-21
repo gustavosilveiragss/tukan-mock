@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#0f1720">
+  <title>Tukan Nutrition</title>
+  <link rel="icon" href="assets/logo-tukan.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/screens.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 5h14v14H5zM9 5v14M5 9h14"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 19V5m16 14H4M8 15l3-4 3 3 5-6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 8a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 3c.6 2.6-.2 4.6-1.7 6.1-1 1-1.4 2-1.2 3.2.2 1.3 1.3 2.2 2.4 2.2 1.6 0 2.3-1.2 2.3-2.6 1.4 1 2.2 2.4 2.2 4.3 0 3-2.6 5.4-5.7 5.4S6 19 6 16c0-3 1.6-4.6 3.2-6.4 1.6-1.8 2.6-4.2 2.3-6.6 0-.1 1.5.2 2 0Z"/></symbol>
+    <symbol id="i-water" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-4.3-4.3"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 20h4l10-10-4-4L4 16v4ZM14 6l4 4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/></symbol>
+    <symbol id="i-heart-fill" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v14"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 3v6h-6M7 21v-6h6M20 9a8 8 0 0 0-13-5M4 15a8 8 0 0 0 13 5"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path fill="currentColor" d="M10 3l1.5 4 4 1.5-4 1.5L10 14 8.5 10l-4-1.5 4-1.5L10 3zm8 8l1 2.5 2.5 1-2.5 1L18 18l-1-2.5-2.5-1 2.5-1L18 11z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3 8 8 9 5-1 8-4.5 8-9V6l-8-3ZM9 12l2 2 4-4"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8.4-3a8.4 8.4 0 0 0-.1-1.3l2-1.6-2-3.4-2.4.9a8 8 0 0 0-2.2-1.3l-.4-2.5h-4L11 5.3a8 8 0 0 0-2.2 1.3l-2.4-.9-2 3.4 2 1.6a8.4 8.4 0 0 0 0 2.6l-2 1.6 2 3.4 2.4-.9a8 8 0 0 0 2.2 1.3l.4 2.5h4l.3-2.5a8 8 0 0 0 2.2-1.3l2.4.9 2-3.4-2-1.6c0-.4.1-.9.1-1.3Z"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+    <symbol id="i-restaurant" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 2v8a2 2 0 0 0 4 0V2M9 10v12M15 22V2l4 4v6h-4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="m13 2-9 12h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4l2-2Zm4 3a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M10 11v6M14 11v6M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M5 12h14"/></symbol>
+  </defs>
+</svg>
+
+<div class="viewport">
+  <div class="device-frame">
+    <div class="app" data-chrome="on">
+
+      <header class="app-header">
+        <button class="header-logo" type="button" data-go="dashboard" aria-label="Tukan, ir para o início">
+          <img class="logo-mark-img" src="assets/logo-tukan.svg" alt="">
+          <span class="wordmark">tukan</span>
+        </button>
+        <div class="header-right">
+          <button class="header-flame" id="header-flame" type="button" data-go="streak" aria-label="Ofensiva">
+            <svg aria-hidden="true" width="14" height="14"><use href="#i-flame"></use></svg>
+            <span id="header-flame-number">0</span>
+          </button>
+          <button class="header-avatar" id="header-avatar" type="button" data-go="profile" aria-label="Perfil">
+            <span class="avatar" id="header-avatar-initial">G</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+
+        <section data-screen="landing" hidden aria-labelledby="landing-title">
+          <div class="landing-hero">
+            <img class="logo-mark-img" src="assets/logo-tukan.svg" alt="">
+            <h1 id="landing-title">tukan nutrition</h1>
+            <p>Nutrição personalizada com IA</p>
+          </div>
+          <div class="landing-main-card">
+            <div class="tukan-line">Tukan | Nutrição personalizada com IA</div>
+            <h1 class="mt-3">Seu plano alimentar se adapta à sua vida. Não o contrário.</h1>
+            <p>Plataforma inteligente que transforma perfil biométrico, rotina, preferências, restrições e condições clínicas em orientações nutricionais dinâmicas e acessíveis.</p>
+            <div class="landing-ctas">
+              <button class="btn btn-brand" type="button" data-act="begin">Começar agora</button>
+              <button class="btn btn-ghost on-dark" type="button" data-act="demo">Ver demonstração</button>
+            </div>
+          </div>
+
+          <div class="landing-preview">
+            <div class="row-between">
+              <span class="tiny muted">Preview do app</span>
+              <span class="badge">Ao vivo</span>
+            </div>
+            <h3 class="mt-2">Dashboard inteligente</h3>
+            <div class="landing-mini">
+              <div class="mini-tile"><span class="muted">Meta calórica</span><strong>1.655 kcal</strong></div>
+              <div class="mini-tile"><span class="muted">Refeições</span><strong>3 / 4</strong></div>
+              <div class="mini-tile"><span class="muted">Hidratação</span><strong>1,8 / 2,5 L</strong></div>
+              <div class="mini-tile"><span class="muted">Aderência</span><strong>82%</strong></div>
+            </div>
+          </div>
+
+          <div class="landing-badges">
+            <div class="landing-badge">
+              <h4><svg width="16" height="16"><use href="#i-shield"></use></svg> Confiável</h4>
+              <p>Centraliza recomendações baseadas em dados e reduz a confusão causada por informações genéricas da internet.</p>
+            </div>
+            <div class="landing-badge">
+              <h4><svg width="16" height="16"><use href="#i-sparkles"></use></svg> Adaptável</h4>
+              <p>Considera diabetes, vegetarianismo, rotina diária, preferências e evolução do usuário ao longo do tempo.</p>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="auth" hidden aria-labelledby="auth-title">
+          <div class="auth-hero">
+            <h2 id="auth-title">Entrar no Tukan</h2>
+            <p class="muted">Entre com qualquer email e senha para acessar o protótipo.</p>
+          </div>
+          <div class="auth-wave">
+            <span class="chip">Bem-vindo ao Tukan</span>
+            <h1 class="mt-3">Alimentação personalizada, prática e guiada por IA.</h1>
+            <p>Configure seu perfil, receba planos adaptados à sua rotina e acompanhe sua evolução com uma interface acolhedora e objetiva.</p>
+            <div class="auth-pair">
+              <div class="pair-tile"><strong>Plano individual</strong><p>Baseado em metas, rotina e restrições.</p></div>
+              <div class="pair-tile"><strong>Acompanhamento</strong><p>Ajustes automáticos por comportamento.</p></div>
+            </div>
+          </div>
+
+          <div class="auth-form-wrap">
+            <div class="toggle-tabs" role="tablist" id="auth-tabs">
+              <button type="button" role="tab" aria-selected="true" data-tab="login">Entrar</button>
+              <button type="button" role="tab" aria-selected="false" data-tab="register">Criar conta</button>
+            </div>
+            <form id="auth-form" novalidate>
+              <div class="field">
+                <label class="field-label" for="auth-email">E-mail</label>
+                <input id="auth-email" class="field-input" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="auth-password">Senha</label>
+                <input id="auth-password" class="field-input" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+              </div>
+              <div class="row-between mt-4">
+                <label class="check-row"><input type="checkbox" id="auth-keep"> Manter conectado</label>
+                <button class="btn-link" type="button" data-act="forgot">Esqueci a senha</button>
+              </div>
+              <button class="btn btn-primary btn-full mt-4" type="submit">
+                <span id="auth-cta-label">Acessar conta</span>
+                <svg width="16" height="16"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </form>
+          </div>
+          <div class="auth-form-hints">POC acadêmica: esta tela representa a entrada do usuário no protótipo, sem autenticação real. Qualquer email e senha serão aceitos.</div>
+          <div class="center" style="padding: 0 var(--space-4) var(--space-6);">
+            <button class="btn-link" type="button" data-act="skip">Pular login</button>
+          </div>
+        </section>
+
+        <section data-screen="onboarding" hidden aria-labelledby="onb-title">
+          <div class="onb-header">
+            <div class="row-between">
+              <span class="tiny muted" id="onb-step-label">Etapa 1 de 5</span>
+              <button class="btn-link" type="button" data-act="skip" id="onb-skip">Pular onboarding</button>
+            </div>
+            <h2 id="onb-title" class="mt-2" style="font-size:20px">Monte seu contexto</h2>
+            <div class="onb-steps" id="onb-steps">
+              <div class="onb-step-chip current" data-step="0">Dados</div>
+              <div class="onb-step-chip" data-step="1">Objetivo</div>
+              <div class="onb-step-chip" data-step="2">Rotina</div>
+              <div class="onb-step-chip" data-step="3">Saúde</div>
+              <div class="onb-step-chip" data-step="4">Confirmação</div>
+            </div>
+            <div class="progress mt-3"><span id="onb-progress" style="width: 20%"></span></div>
+          </div>
+
+          <div class="onb-body" id="onb-body"></div>
+
+          <div class="onb-actions">
+            <button class="btn btn-ghost" type="button" data-act="back">Voltar</button>
+            <button class="btn btn-primary" type="button" data-act="next" id="onb-next">Avançar</button>
+          </div>
+        </section>
+
+        <section data-screen="dashboard" hidden aria-labelledby="dash-title">
+          <div class="screen-pad">
+            <div class="dash-greeting">
+              <div>
+                <h2 id="dash-title"><span id="dash-greeting">Bom dia</span>, <span id="dash-name">Gustavo</span>!</h2>
+                <p id="dash-subtitle">Sua ofensiva ativa</p>
+              </div>
+              <button class="icon-btn" type="button" aria-label="Notificações">
+                <svg width="20" height="20"><use href="#i-bell"></use></svg>
+              </button>
+            </div>
+
+            <div class="streak-hero" id="dash-streak" role="button" tabindex="0">
+              <div class="streak-hero-text">
+                <div class="label" id="dash-streak-label">Sua ofensiva ativa</div>
+                <div class="number"><span class="flame-ico">🔥</span><span id="dash-streak-days">15</span></div>
+                <p id="dash-streak-desc">dias de foco na dieta!</p>
+              </div>
+              <div class="streak-hero-ring">
+                <div class="ring on-dark" aria-hidden="true">
+                  <svg width="96" height="96">
+                    <circle class="ring-track" cx="48" cy="48" r="40"></circle>
+                    <circle class="ring-fill" id="dash-ring" cx="48" cy="48" r="40" stroke-dasharray="251.3" stroke-dashoffset="60"></circle>
+                  </svg>
+                  <span class="ring-center" id="dash-ring-center">6/7</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-grid">
+              <div class="metric">
+                <div class="metric-label"><svg width="12" height="12"><use href="#i-bolt"></use></svg> Meta calórica</div>
+                <div class="metric-value" id="m-cal">1.819 kcal</div>
+                <div class="metric-sub">Hoje</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label"><svg width="12" height="12"><use href="#i-restaurant"></use></svg> Refeições</div>
+                <div class="metric-value" id="m-meals">3 / 4</div>
+                <div class="metric-sub" id="m-meals-sub">Bom ritmo</div>
+              </div>
+              <button class="metric metric-btn" type="button" id="m-water-tile" data-go="hydration" aria-label="Abrir tela de hidratação">
+                <div class="metric-label"><svg width="12" height="12"><use href="#i-water"></use></svg> Hidratação</div>
+                <div class="metric-value" id="m-water">1,8 L</div>
+                <div class="metric-sub" id="m-water-sub">Meta 2,5 L</div>
+              </button>
+              <div class="metric">
+                <div class="metric-label"><svg width="12" height="12"><use href="#i-chart"></use></svg> Aderência</div>
+                <div class="metric-value" id="m-adh">82%</div>
+                <div class="metric-sub">Últimos 7 dias</div>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Plano de hoje</div>
+                  <h3>Resumo alimentar</h3>
+                </div>
+                <span class="chip">Personalizado</span>
+              </div>
+              <div id="dash-plan" class="mt-3"></div>
+              <button class="btn btn-ghost btn-sm btn-full mt-3" type="button" data-go="plan">Ver plano completo <svg width="14" height="14"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+
+            <div class="card-dark mt-4">
+              <div class="card-title" style="color:rgba(255,255,255,.6)">Sugestão do dia</div>
+              <h3>Exercício recomendado</h3>
+              <p class="mt-3" style="color:var(--ink-on-dark-muted)">Caminhada rápida + mobilidade. 30 minutos em intensidade moderada para aumentar gasto calórico e melhorar constância sem sobrecarregar a rotina.</p>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Ações rápidas</div>
+              <h3>Atalhos úteis</h3>
+              <div class="quick-actions mt-3">
+                <button class="quick-action" type="button" data-go="register">
+                  <span class="qa-label"><span class="qa-ico"><svg width="16" height="16"><use href="#i-plus"></use></svg></span>Registrar refeição</span>
+                  <svg width="16" height="16" class="muted"><use href="#i-arrow-right"></use></svg>
+                </button>
+                <button class="quick-action" type="button" data-go="plan">
+                  <span class="qa-label"><span class="qa-ico"><svg width="16" height="16"><use href="#i-plan"></use></svg></span>Ver plano completo</span>
+                  <svg width="16" height="16" class="muted"><use href="#i-arrow-right"></use></svg>
+                </button>
+                <button class="quick-action" type="button" data-go="hydration">
+                  <span class="qa-label"><span class="qa-ico"><svg width="16" height="16"><use href="#i-water"></use></svg></span>Adicionar água consumida</span>
+                  <svg width="16" height="16" class="muted"><use href="#i-arrow-right"></use></svg>
+                </button>
+                <button class="quick-action" type="button" data-go="feedback">
+                  <span class="qa-label"><span class="qa-ico"><svg width="16" height="16"><use href="#i-sparkles"></use></svg></span>Feedback adaptativo</span>
+                  <svg width="16" height="16" class="muted"><use href="#i-arrow-right"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="ia-summary mt-4">
+              <div class="tag"><svg width="12" height="12"><use href="#i-sparkles"></use></svg> IA aplicada</div>
+              <h3 class="mt-2" style="color:#fff">Resumo inteligente</h3>
+              <p class="mt-3" id="dash-ai">Você mantém boa consistência.</p>
+            </div>
+
+            <div class="card mt-4">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Aderência</div>
+                  <h3>Semana atual</h3>
+                </div>
+                <button class="btn-link" type="button" data-go="progress?period=7d">Ver detalhes</button>
+              </div>
+              <div class="week-bars" id="dash-week-bars"></div>
+              <div class="week-labels"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="plan" hidden>
+          <div class="screen-pad">
+            <div class="section-header">
+              <div>
+                <span class="tiny muted">Plano alimentar</span>
+                <h2>Seu plano completo</h2>
+              </div>
+            </div>
+            <p class="muted small mb-4">Tela que reforça a personalização do Tukan ao explicar o porquê de cada bloco alimentar, mostrando calorias, macros e adaptações possíveis.</p>
+            <div id="plan-list"></div>
+            <div class="plan-why mt-4">
+              <div class="tag" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.65);font-size:11px;letter-spacing:0.06em;text-transform:uppercase"><svg width="12" height="12"><use href="#i-sparkles"></use></svg> Recomendação Inteligente</div>
+              <h3 class="mt-2">Por que este plano combina com você</h3>
+              <ul>
+                <li>Estrutura alimentar com refeições práticas para encaixar em rotina acadêmica e trabalho.</li>
+                <li>Priorização de saciedade e controle glicêmico com carboidratos de melhor qualidade.</li>
+                <li>Ajustes pensados para prevenção de abandono por baixa praticidade.</li>
+                <li>Opções de substituição para preferências e restrições alimentares.</li>
+              </ul>
+            </div>
+            <div class="card mt-4 plan-obs">
+              <div class="card-title">Observações do perfil</div>
+              <h3>Detalhes considerados</h3>
+              <ul class="mt-3" id="plan-obs"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="register" hidden>
+          <div class="screen-pad">
+            <div class="section-header">
+              <div>
+                <span class="tiny muted">Registro diário</span>
+                <h2>Registrar refeições</h2>
+              </div>
+            </div>
+            <p class="muted small mb-4">Visualização de consumo, inserção rápida de refeições e acompanhamento do saldo calórico do dia de forma amigável.</p>
+
+            <div class="card">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Busca rápida</div>
+                  <h3>Adicionar refeição</h3>
+                </div>
+                <span class="icon-btn" aria-hidden="true"><svg><use href="#i-edit"></use></svg></span>
+              </div>
+              <div class="reg-search mt-3">
+                <svg><use href="#i-search"></use></svg>
+                <input type="search" id="reg-search" placeholder="Buscar alimento ou refeição pronta" autocomplete="off">
+              </div>
+              <div class="chip ghost-dark mt-3" id="reg-slot-chip" hidden style="display:inline-flex;align-items:center;gap:6px">
+                Filtrando por <strong data-role="label"></strong>
+                <button type="button" class="btn-link" data-act="clear-slot" aria-label="Remover filtro" style="color:inherit;text-decoration:underline">limpar</button>
+              </div>
+              <div id="reg-suggestions"></div>
+            </div>
+
+            <div class="balance-card mt-4">
+              <div class="card-title" style="color:#0b4a35">Saldo do dia</div>
+              <div class="kcal" id="reg-balance">644 kcal</div>
+              <p id="reg-balance-sub">Ainda disponíveis dentro da meta para manter seu plano alinhado com o objetivo de hoje.</p>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Histórico de hoje</div>
+              <h3>Refeições registradas</h3>
+              <div id="reg-history" class="mt-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="progress" hidden>
+          <div class="screen-pad">
+            <div class="section-header">
+              <div>
+                <span class="tiny muted">Progresso</span>
+                <h2>Evolução e analytics</h2>
+              </div>
+            </div>
+            <p class="muted small mb-4">Evolução visual com gráficos, métricas semanais e leitura simples de consistência e tendência.</p>
+
+            <div class="prog-filters" id="prog-filters">
+              <button class="chip" data-period="7d">7 dias</button>
+              <button class="chip" data-period="30d">30 dias</button>
+              <button class="chip" data-period="6m">6 meses</button>
+              <button class="chip" data-period="1a">1 ano</button>
+            </div>
+
+            <div class="card">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Tendência</div>
+                  <h3 id="prog-chart-title">Peso ao longo dos últimos 6 meses</h3>
+                </div>
+                <span class="icon-btn" aria-hidden="true"><svg><use href="#i-chart"></use></svg></span>
+              </div>
+              <div class="chart-wrap"><canvas id="chart-weight"></canvas></div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Consistência</div>
+                  <h3>Aderência semanal</h3>
+                </div>
+                <span class="icon-btn" aria-hidden="true"><svg><use href="#i-chart"></use></svg></span>
+              </div>
+              <p class="muted small mt-1" id="prog-adh-range">Últimos 7 dias</p>
+              <div id="adherence-list" class="mt-3"></div>
+            </div>
+
+            <div class="kpi-grid mt-4" id="prog-kpi-grid">
+              <div class="metric">
+                <div class="metric-label" id="kpi-cal-label">Calorias médias (dia)</div>
+                <div class="metric-value" id="kpi-cal">—</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label" id="kpi-hits-label">Metas batidas</div>
+                <div class="metric-value" id="kpi-hits">—</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label" id="kpi-weight-label">Variação de peso</div>
+                <div class="metric-value" id="kpi-weight">—</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Ritmo atual</div>
+                <div class="metric-value" id="kpi-pace">—</div>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Histórico IA</div>
+              <h3>Avaliações recentes</h3>
+              <div id="prog-ia-history" class="mt-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="feedback" hidden>
+          <div class="screen-pad">
+            <div class="section-header">
+              <div>
+                <span class="tiny muted">Feedback adaptativo</span>
+                <h2>Ajustes inteligentes</h2>
+              </div>
+            </div>
+            <p class="muted small mb-4">Aqui o sistema mostra como aprendeu com seu comportamento e ajusta o plano de forma prática e personalizada.</p>
+
+            <div class="feedback-hero">
+              <span class="chip ghost-dark"><svg width="12" height="12"><use href="#i-sparkles"></use></svg> Atualização automática</span>
+              <h2 id="fb-title" class="mt-3">Detectamos um padrão na sua rotina.</h2>
+              <p id="fb-body">Ajuste em andamento.</p>
+              <div class="chips" id="fb-chips"></div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Próximos ajustes</div>
+              <h3>Sugestões para o plano</h3>
+              <div id="fb-adjustments" class="mt-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="streak" hidden>
+          <div class="screen-pad">
+            <div class="streak-big">
+              <div class="flame-big">🔥</div>
+              <div class="number" id="streak-number"></div>
+              <div class="label" id="streak-label"></div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Semana atual</div>
+              <h3>Seus últimos 7 dias</h3>
+              <div class="streak-week" id="streak-week"></div>
+            </div>
+
+            <div class="streak-praise">
+              <div class="tag" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.65);font-size:11px;letter-spacing:0.06em;text-transform:uppercase"><svg width="12" height="12"><use href="#i-sparkles"></use></svg> Disciplina</div>
+              <h3 class="mt-2" style="color:#fff">Sua disciplina é incrível!</h3>
+              <p id="streak-praise-body">Você vem mantendo o ritmo de forma consistente. Continue assim.</p>
+              <div class="week-bars mt-3" id="streak-mini-bars"></div>
+              <div class="week-labels" style="color:rgba(255,255,255,.6)"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+            </div>
+
+            <div class="streak-continue" id="streak-continue">
+              <h4>Continue assim!</h4>
+              <p id="streak-continue-body"></p>
+            </div>
+
+            <div class="streak-actions">
+              <button class="btn btn-primary btn-full" type="button" data-go="progress?period=7d">Ver resumo semanal</button>
+              <button class="btn btn-brand btn-full" type="button" data-act="share"><svg width="16" height="16"><use href="#i-share"></use></svg> Compartilhar conquista</button>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="hydration" hidden>
+          <div class="screen-pad">
+            <div class="hydra-header">
+              <button class="icon-btn" type="button" data-go="dashboard" aria-label="Voltar ao início">
+                <svg width="20" height="20"><use href="#i-arrow-left"></use></svg>
+              </button>
+              <h2>Hidratação</h2>
+            </div>
+
+            <div class="hydra-hero">
+              <div class="ring on-dark" aria-hidden="true">
+                <svg width="140" height="140">
+                  <circle class="ring-track" cx="70" cy="70" r="60"></circle>
+                  <circle class="ring-fill" id="hydra-ring" cx="70" cy="70" r="60" stroke-dasharray="376.99" stroke-dashoffset="376.99"></circle>
+                </svg>
+                <span class="ring-center">
+                  <span class="hydra-ring-value" id="hydra-ring-value">0 L</span>
+                  <span class="hydra-ring-sub" id="hydra-ring-sub">de 0 L</span>
+                </span>
+              </div>
+              <div class="hydra-hero-text">
+                <span class="chip" id="hydra-percent">0% da meta</span>
+                <p id="hydra-hero-msg">Continue bebendo água ao longo do dia.</p>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Adicionar rápido</div>
+              <h3>Escolha uma dose</h3>
+              <div class="hydra-presets mt-3">
+                <button class="hydra-preset" type="button" data-ml="200">
+                  <span class="hp-ico"><svg width="18" height="18"><use href="#i-water"></use></svg></span>
+                  <span class="hp-label">200 ml</span>
+                  <span class="hp-sub">Copo pequeno</span>
+                </button>
+                <button class="hydra-preset" type="button" data-ml="300">
+                  <span class="hp-ico"><svg width="18" height="18"><use href="#i-water"></use></svg></span>
+                  <span class="hp-label">300 ml</span>
+                  <span class="hp-sub">Copo médio</span>
+                </button>
+                <button class="hydra-preset" type="button" data-ml="500">
+                  <span class="hp-ico"><svg width="18" height="18"><use href="#i-water"></use></svg></span>
+                  <span class="hp-label">500 ml</span>
+                  <span class="hp-sub">Garrafa</span>
+                </button>
+                <button class="hydra-preset" type="button" data-ml="750">
+                  <span class="hp-ico"><svg width="18" height="18"><use href="#i-water"></use></svg></span>
+                  <span class="hp-label">750 ml</span>
+                  <span class="hp-sub">Squeeze</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Quantidade específica</div>
+              <h3>Informe em ml</h3>
+              <div class="hydra-custom mt-3">
+                <button class="hydra-step" type="button" data-step="-50" aria-label="Diminuir 50 ml">
+                  <svg width="14" height="14"><use href="#i-minus"></use></svg>
+                </button>
+                <input class="field-input hydra-input" id="hydra-custom-input" type="number" inputmode="numeric" min="1" max="2000" step="50" placeholder="ml">
+                <button class="hydra-step" type="button" data-step="50" aria-label="Aumentar 50 ml">
+                  <svg width="14" height="14"><use href="#i-plus"></use></svg>
+                </button>
+              </div>
+              <button class="btn btn-brand btn-full mt-3" type="button" id="hydra-custom-add">Adicionar</button>
+            </div>
+
+            <div class="card mt-4" id="hydra-next-card">
+              <div class="card-title"><svg width="12" height="12"><use href="#i-clock"></use></svg> Próxima dose sugerida</div>
+              <h3 id="hydra-next-time">--:--</h3>
+              <p class="muted small mt-2" id="hydra-next-body">Para manter o ritmo da meta diária.</p>
+            </div>
+
+            <div class="card mt-4">
+              <div class="row-between">
+                <div>
+                  <div class="card-title">Hoje</div>
+                  <h3 id="hydra-history-title">0 registros</h3>
+                </div>
+                <span class="chip" id="hydra-history-total">0 ml</span>
+              </div>
+              <div id="hydra-history" class="mt-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-screen="profile" hidden>
+          <div class="screen-pad">
+            <div class="profile-hero">
+              <div class="avatar avatar-lg" id="profile-avatar">G</div>
+              <div class="info">
+                <h2 id="profile-name">Gustavo Silveira</h2>
+                <p id="profile-sub">Emagrecimento, 4 refeições</p>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-title">Trocar usuário</div>
+              <h3>Personas mockadas</h3>
+              <p class="muted small mt-2">Trocar para ver a gamificação em estados diferentes.</p>
+              <div id="profile-personas" class="mt-3"></div>
+            </div>
+
+            <div class="card mt-4 profile-actions">
+              <div class="card-title">Conta</div>
+              <h3 class="mb-2">Ações</h3>
+              <button class="list-item" type="button" data-act="edit">
+                <span class="row"><svg width="16" height="16"><use href="#i-user"></use></svg> Editar perfil</span>
+                <span class="arrow"><svg width="14" height="14"><use href="#i-arrow-right"></use></svg></span>
+              </button>
+              <button class="list-item" type="button" data-act="feedback">
+                <span class="row"><svg width="16" height="16"><use href="#i-sparkles"></use></svg> Feedback da IA</span>
+                <span class="arrow"><svg width="14" height="14"><use href="#i-arrow-right"></use></svg></span>
+              </button>
+              <button class="list-item" type="button" data-act="reset-day">
+                <span class="row"><svg width="16" height="16"><use href="#i-refresh"></use></svg> Zerar refeições de hoje</span>
+                <span class="arrow"><svg width="14" height="14"><use href="#i-arrow-right"></use></svg></span>
+              </button>
+              <button class="list-item" type="button" data-act="reset-all">
+                <span class="row"><svg width="16" height="16"><use href="#i-refresh"></use></svg> Resetar todos os dados</span>
+                <span class="arrow"><svg width="14" height="14"><use href="#i-arrow-right"></use></svg></span>
+              </button>
+              <button class="list-item" type="button" data-act="logout">
+                <span class="row"><svg width="16" height="16"><use href="#i-log-out"></use></svg> Sair</span>
+                <span class="arrow"><svg width="14" height="14"><use href="#i-arrow-right"></use></svg></span>
+              </button>
+            </div>
+
+            <div class="debug-info">Protótipo v1.0 &middot; PUCPR 2026/1</div>
+          </div>
+        </section>
+
+      </main>
+
+      <nav class="app-tabs" role="tablist" aria-label="Navegação principal">
+        <button class="tab" type="button" role="tab" data-route="dashboard" aria-selected="false">
+          <svg aria-hidden="true"><use href="#i-home"></use></svg>
+          Início
+          <span class="tab-dot" aria-hidden="true"></span>
+        </button>
+        <button class="tab" type="button" role="tab" data-route="plan" aria-selected="false">
+          <svg aria-hidden="true"><use href="#i-plan"></use></svg>
+          Plano
+          <span class="tab-dot" aria-hidden="true"></span>
+        </button>
+        <button class="tab" type="button" role="tab" data-route="register" aria-selected="false">
+          <svg aria-hidden="true"><use href="#i-plus"></use></svg>
+          Registrar
+          <span class="tab-dot" aria-hidden="true"></span>
+        </button>
+        <button class="tab" type="button" role="tab" data-route="progress" aria-selected="false">
+          <svg aria-hidden="true"><use href="#i-chart"></use></svg>
+          Progresso
+          <span class="tab-dot" aria-hidden="true"></span>
+        </button>
+        <button class="tab" type="button" role="tab" data-route="profile" aria-selected="false">
+          <svg aria-hidden="true"><use href="#i-user"></use></svg>
+          Perfil
+          <span class="tab-dot" aria-hidden="true"></span>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+<a class="gh-link" href="https://github.com/gustavosilveiragss/tukan-mock" target="_blank" rel="noopener noreferrer" aria-label="Ver no GitHub">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+</a>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<script src="js/data/personas.js"></script>
+<script src="js/data/plan.js"></script>
+<script src="js/data/meals.js"></script>
+<script src="js/data/series.js"></script>
+<script src="js/data/weight-history.js"></script>
+<script src="js/data/adherence.js"></script>
+<script src="js/data/ai-feedback.js"></script>
+
+<script src="js/lib/storage.js"></script>
+<script src="js/lib/date.js"></script>
+<script src="js/lib/state.js"></script>
+<script src="js/lib/toast.js"></script>
+<script src="js/lib/modal.js"></script>
+<script src="js/lib/router.js"></script>
+
+<script src="js/features/streak.js"></script>
+<script src="js/features/share.js"></script>
+<script src="js/features/meal-log.js"></script>
+
+<script src="js/screens/landing.js"></script>
+<script src="js/screens/auth.js"></script>
+<script src="js/screens/onboarding.js"></script>
+<script src="js/screens/dashboard.js"></script>
+<script src="js/screens/plan.js"></script>
+<script src="js/screens/register.js"></script>
+<script src="js/screens/progress.js"></script>
+<script src="js/screens/feedback.js"></script>
+<script src="js/screens/streak-screen.js"></script>
+<script src="js/screens/hydration.js"></script>
+<script src="js/screens/profile.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

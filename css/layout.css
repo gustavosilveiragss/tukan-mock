@@ -1,0 +1,215 @@
+.viewport {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  background: var(--bg-page);
+}
+
+.device-frame {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 769px) {
+  .viewport {
+    background: radial-gradient(120% 90% at 0% 0%, #d8efe1 0%, var(--bg-page) 60%),
+                radial-gradient(90% 60% at 100% 100%, #e0f2e7 0%, transparent 60%);
+    padding: 24px;
+    align-items: center;
+  }
+  .device-frame {
+    max-width: 420px;
+    height: min(900px, calc(100vh - 48px));
+    border-radius: 44px;
+    box-shadow: 0 30px 80px rgba(15, 23, 32, 0.18), 0 0 0 12px #0b1324, 0 0 0 13px rgba(255,255,255,.3);
+  }
+}
+
+.gh-link {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #0b1324;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 6px 18px rgba(15, 23, 32, 0.25);
+  z-index: 1000;
+  transition: transform .15s ease, background .15s ease;
+}
+.gh-link:hover {
+  transform: translateY(-1px);
+  background: #141d33;
+}
+.gh-link:focus-visible {
+  outline: 2px solid var(--brand, #2ea86a);
+  outline-offset: 2px;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--header-h);
+  padding: 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-mark-img {
+  width: 48px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.wordmark {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.header-flame {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--flame-soft);
+  color: #c64718;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.header-flame.danger { background: var(--danger-soft); color: var(--danger); }
+
+.header-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(var(--tab-h) + 24px);
+}
+
+.app-main.no-tabs {
+  padding-bottom: 0;
+}
+
+.screen {
+  animation: screen-in .25s var(--ease);
+}
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.screen-pad {
+  padding: var(--space-4) var(--space-4) var(--space-5);
+}
+
+.screen-full {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-tabs {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  height: calc(var(--tab-h) + env(safe-area-inset-bottom));
+  padding: 6px var(--space-2) calc(6px + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  box-shadow: var(--shadow-tab);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  transition: color .15s var(--ease), background .15s var(--ease);
+}
+
+.tab svg { width: 22px; height: 22px; }
+.tab[aria-selected="true"] {
+  color: var(--brand-strong);
+}
+.tab[aria-selected="true"] .tab-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+.tab-dot {
+  width: 4px; height: 4px;
+  background: var(--brand);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: all .2s var(--ease);
+}
+
+.app[data-chrome="off"] .app-header,
+.app[data-chrome="off"] .app-tabs {
+  display: none;
+}
+.app[data-chrome="off"] .app-main {
+  padding-bottom: 0;
+}
